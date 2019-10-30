@@ -8,6 +8,9 @@
             <tree position="attributes">
                 <attribute name="editable">bottom</attribute>
             </tree>
+            <field name="partner_id" position="before">
+                <field name="self_id" string="Invoice"/>
+            </field>
             <field name="amount_untaxed_invoice_signed" position="after">
                 <field name="third_parties" widget="monetary" sum="Total Third Parties"/>
                 <field name="net_total_amount" widget="monetary" sum="Net Total Amount"/>
