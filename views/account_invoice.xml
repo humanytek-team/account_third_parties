@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="invoice_thirdparties_tree" model="ir.ui.view">
+        <field name="name">account.invoice.thirdparties.tree</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_tree" />
+        <field name="arch" type="xml">
+            <tree position="attributes">
+                <attribute name="editable">bottom</attribute>
+            </tree>
+            <field name="amount_untaxed_invoice_signed" position="after">
+                <field name="third_parties" widget="monetary" sum="Total Third Parties"/>
+                <field name="net_total_amount" widget="monetary" sum="Net Total Amount"/>
+            </field>
+        </field>
+    </record>
+</odoo>
