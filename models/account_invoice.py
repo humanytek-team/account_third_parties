@@ -14,6 +14,13 @@ class AccountInvoice(models.Model):
     )
     net_total_amount = fields.Float(
         compute='_get_net_total_amount',
+        store=True,
+    )
+    amount_untaxed_invoice_signed = fields.Monetary(
+        store=True,
+    )
+    amount_tax_signed = fields.Monetary(
+        store=True,
     )
 
     @api.depends('third_parties', 'amount_untaxed_invoice_signed')
