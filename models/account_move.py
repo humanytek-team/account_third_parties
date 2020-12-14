@@ -1,13 +1,11 @@
-# -*- coding: utf-8 -*-
-
 from odoo import api, fields, models, _
 
 
-class AccountInvoice(models.Model):
-    _inherit = "account.invoice"
+class AccountMove(models.Model):
+    _inherit = "account.move"
 
     self_id = fields.Many2one(
-        comodel_name="account.invoice",
+        comodel_name="account.move",
         compute="_get_self_id",
     )
     third_parties = fields.Float()
