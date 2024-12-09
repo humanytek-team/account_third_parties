@@ -8,13 +8,13 @@
             <tree position="attributes">
                 <attribute name="editable">bottom</attribute>
             </tree>
-            <field name="invoice_partner_display_name" position="before">
+            <field name="partner_id" position="before">
                 <field name="self_id" string="Invoice"/>
             </field>
-            <field name="amount_untaxed_signed" position="attributes">
+            <field name="amount_total_signed" position="attributes">
                 <attribute name="modifiers">{'invisible': True}</attribute>
             </field>
-            <field name="amount_untaxed_signed" position="after">
+            <field name="amount_total_signed" position="after">
                 <field name="amount_untaxed" string="Tax excluded" widget="monetary" sum="Total Untaxed"/>
                 <field name="third_parties" widget="monetary" sum="Total Third Parties"/>
                 <field name="net_total_amount" widget="monetary" sum="Net Total Amount"/>
