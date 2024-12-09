@@ -5,20 +5,29 @@
         <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_move_tree"/>
         <field name="arch" type="xml">
-            <tree position="attributes">
+            <tree string="Journal Entries" __validate__="0">
+
+            <!-- Hacer el árbol editable -->
+            <xpath expr="//tree" position="attributes">
                 <attribute name="editable">bottom</attribute>
-            </tree>
-            <field name="partner_id" position="before">
+            </xpath>
+
+            <!-- Insertar el campo self_id antes de partner_id -->
+            <xpath expr="//field[@name='partner_id']" position="before">
                 <field name="self_id" string="Invoice"/>
-            </field>
-            <field name="amount_total_signed" position="attributes">
+            </xpath>
+
+            <!-- Hacer invisible el campo amount_total_signed -->
+            <xpath expr="//field[@name='amount_total_signed']" position="attributes">
                 <attribute name="modifiers">{'invisible': True}</attribute>
-            </field>
-            <field name="amount_total_signed" position="after">
+            </xpath>
+
+            <!-- Añadir nuevos campos después de amount_total_signed -->
+            <xpath expr="//field[@name='amount_total_signed']" position="after">
                 <field name="amount_untaxed" string="Tax excluded" widget="monetary" sum="Total Untaxed"/>
                 <field name="third_parties" widget="monetary" sum="Total Third Parties"/>
                 <field name="net_total_amount" widget="monetary" sum="Net Total Amount"/>
-            </field>
+            </xpath>
         </field>
     </record>
 </odoo>
