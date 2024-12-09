@@ -3,7 +3,7 @@
     <record id="account_move_view_tree" model="ir.ui.view">
         <field name="name">account.move.thirdparties.tree</field>
         <field name="model">account.move</field>
-        <field name="inherit_id" ref="account.view_invoice_tree"/>
+        <field name="inherit_id" ref="account.view_move_tree"/>
         <field name="arch" type="xml">
             <tree position="attributes">
                 <attribute name="editable">bottom</attribute>
@@ -12,7 +12,7 @@
                 <field name="self_id" string="Invoice"/>
             </field>
             <field name="amount_untaxed_signed" position="attributes">
-                <attribute name="invisible">1</attribute>
+                <attribute name="modifiers">{'invisible': True}</attribute>
             </field>
             <field name="amount_untaxed_signed" position="after">
                 <field name="amount_untaxed" string="Tax excluded" widget="monetary" sum="Total Untaxed"/>

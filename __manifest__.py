@@ -1,6 +1,6 @@
 {
     "name": "Account Third Parties",
-    "version": "1.1.1",
+    "version": "17.0.1.1.1",
     "author": "Humanytek",
     "website": "http://humanytek.com",
     "depends": [
@@ -9,4 +9,6 @@
     "data": [
         "views/account_move.xml",
     ],
+    "installable": True,
+    "application": False,
 }
