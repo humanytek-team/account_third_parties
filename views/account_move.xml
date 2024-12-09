@@ -5,7 +5,7 @@
         <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_move_tree"/>
         <field name="arch" type="xml">
-            <tree string="Journal Entries" __validate__="0">
+            <tree string="Journal Entries" __validate__="0"/>
 
             <!-- Hacer el árbol editable -->
             <xpath expr="//tree" position="attributes">
