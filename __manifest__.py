@@ -1,6 +1,6 @@
 {
     "name": "Account Third Parties",
-    "version": "17.0.1.1.1",
+    "version": "1.0",
     "author": "Humanytek",
     "website": "http://humanytek.com",
     "depends": [
