@@ -9,4 +9,5 @@
     "data": [
         "views/account_move.xml",
     ],
+    "installable": False,
 }
